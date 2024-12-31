@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Qidiruv natijalari</h1>
+    {% if foods %}
+        <ul>
+            {% for food in foods %}
+                <li><a href="{% url 'food_detail' food.id %}">{{ food.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>"{{ query }}" bo‘yicha natija topilmadi.</p>
+    {% endif %}
+{% endblock %}
